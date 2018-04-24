@@ -6,6 +6,7 @@ import notify2
 import wikipedia
 import random
 import time
+import textwrap
 from os.path import expanduser
 
 configpath = expanduser('~') + '/.tidbit_categories'
@@ -26,7 +27,7 @@ def get_fact():
     titles = wikipedia.category_members(category, cmlimit=1000)
     title = titles[random.randint(0, len(titles) - 1)]
 
-    return ('Tidbit: ' + category, title + '\n\n' + wikipedia.summary(title, sentences=2))
+    return ('Tidbit: ' + category, title + '\n\n' + textwrap.fill(wikipedia.summary(title, sentences=2), 60))
 
 def notification():
     notify2.init('tidbit')
@@ -93,7 +94,6 @@ if __name__ == '__main__':
         notification()
 
     elif len(sys.argv) == 3:
-        print(sys.argv[1])
         if sys.argv[1] == 'remove':
             remove_category(sys.argv[2])
 
