@@ -33,3 +33,5 @@ listed in ~/.tidbit_categories
   tidbit fact			do not send any notification, instead print to tty
   tidbit help			print this help
 ```
+
+The Wikipedia portal on Categories can be found [here](https://en.wikipedia.org/wiki/Portal:Contents/Categories).
