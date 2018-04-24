@@ -75,9 +75,10 @@ def add_category(category):
 
 def remove_category(category):
     categories = load_category_file()
-    categories.remove(category)
-    with  open(configpath, 'w') as category_file:
-        category_file.write('\n'.join(categories))
+    if category in categories:
+        categories.remove(category)
+        with  open(configpath, 'w') as category_file:
+            category_file.write('\n'.join(categories))
 
 def list_categories():
     map(print, load_category_file())
