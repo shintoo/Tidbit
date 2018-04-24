@@ -50,7 +50,7 @@ def print_help():
     ''' in ~/.tidbit_categories'''
     '''\n\n  tidbit\t\t\tdisplay one tidbit notification'''
     '''\n  tidbit add <category>\t\tadd <category> to list of categories'''
-    '''\n  tidbit remove <category>\tremove <categor> from list of categories'''
+    '''\n  tidbit remove <category>\tremove <category> from list of categories'''
     '''\n  tidbit list\t\t\tlist all categories'''
     '''\n  tidbit background <interval>\tdisplay one tidbit notification every\n\t\t\t\t<interval> seconds'''
     '''\n  tidbit fact\t\t\tdo not send any notification, instead print to tty'''

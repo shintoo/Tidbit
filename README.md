@@ -26,7 +26,7 @@ listed in ~/.tidbit_categories
 
   tidbit			display one tidbit notification
   tidbit add <category>		add <category> to list of categories
-  tidbit remove <category>	remove <categor> from list of categories
+  tidbit remove <category>	remove <category> from list of categories
   tidbit list			list all categories
   tidbit background <interval>	display one tidbit notification every
 				<interval> seconds
