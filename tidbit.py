@@ -22,12 +22,16 @@ def get_random_category():
         quit()
     return categories[random.randint(0, len(categories) - 1)]
 
-def get_fact():
+def get_fact(wrap=0):
     category = get_random_category()
     titles = wikipedia.category_members(category, cmlimit=1000)
     title = titles[random.randint(0, len(titles) - 1)]
+    summary = wikipedia.summary(title, sentences=2)
 
-    return ('Tidbit: ' + category, title + '\n\n' + textwrap.fill(wikipedia.summary(title, sentences=2), 60))
+    if wrap != 0:
+        summary = textwrap.fill(summary, wrap)
+
+    return ('Tidbit: ' + category, title + '\n\n' + summary)
 
 def notification():
     notify2.init('tidbit')
@@ -37,7 +41,7 @@ def notification():
     notif.show()
 
 def tty_print():
-    title, text = get_fact()
+    title, text = get_fact(wrap=60)
     print(title + '\n' + text)
 
 def print_usage():
